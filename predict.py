@@ -47,7 +47,7 @@ Given this image: <img>image1</img>, point out where the dog is<|im_end|>
         ),
         image1: Path = Input(description="Optional image you may use in your prompt known as image1", default=None),
         max_tokens: int = Input(
-            description="Max new tokens to generate", default=2048, ge=1, le=32768
+            description="Max new tokens to generate", default=2048, ge=1, le=8192
         ),
         temperature: float = Input(description="Temperature", default=0.75, ge=0, le=5),
         top_p: float = Input(description="Top_p", default=0.8, ge=0, le=1),
@@ -74,7 +74,7 @@ Given this image: <img>image1</img>, point out where the dog is<|im_end|>
                 max_new_tokens=max_tokens, 
                 temperature=temperature, 
                 top_p=top_p,
-                max_window_size=32768
+                max_window_size=8192
             )
         finally:
             shutil.rmtree(file_ns)
