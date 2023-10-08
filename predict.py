@@ -70,7 +70,11 @@ Given this image: <img>image1</img>, point out where the dog is<|im_end|>
                 shutil.unpack_archive(files_archive, file_ns, filter='data')
 
             yield from self.model.chat_stream_raw(
-                self.tokenizer, add_prefix_to_images(prompt, file_ns), max_new_tokens=max_tokens, temperature=temperature, top_p=top_p
+                self.tokenizer, add_prefix_to_images(prompt, file_ns), 
+                max_new_tokens=max_tokens, 
+                temperature=temperature, 
+                top_p=top_p,
+                max_window_size=32768
             )
         finally:
             shutil.rmtree(file_ns)
