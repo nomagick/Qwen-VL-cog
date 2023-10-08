@@ -29,8 +29,8 @@ build:
     - "matplotlib"
   
   # commands run after the environment is setup
-  run:
-    - MAX_JOBS=12 git clone https://github.com/Dao-AILab/flash-attention.git && cd flash-attention && pip install . && cd csrc/layer_norm && pip install . && cd / && rm -rf flash-attention
+  # run:
+  #   - MAX_JOBS=12 git clone https://github.com/Dao-AILab/flash-attention.git && cd flash-attention && pip install . && cd csrc/layer_norm && pip install . && cd / && rm -rf flash-attention
 
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"
