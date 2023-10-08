@@ -1,0 +1,3 @@
+[submodule "Qwen-VL-Chat"]
+	path = Qwen-VL-Chat
+	url = https://www.modelscope.cn/qwen/Qwen-VL-Chat.git

@@ -9,6 +9,5 @@ build
 .DS_Store
 
 /private/
-Qwen-VL-Chat/
-Qwen-VL-Chat-Int4/
 SimSun.ttf
+.cog/
