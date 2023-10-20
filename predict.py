@@ -67,7 +67,7 @@ Given this image: <img>image1</img>, point out where the dog is<|im_end|>
                 shutil.copyfile(image3, os.path.join(file_ns,'image3'))
 
             if files_archive:
-                shutil.unpack_archive(files_archive, file_ns, filter='data')
+                shutil.unpack_archive(files_archive, file_ns)
 
             yield from self.model.chat_stream_raw(
                 self.tokenizer, add_prefix_to_images(prompt, file_ns), 
